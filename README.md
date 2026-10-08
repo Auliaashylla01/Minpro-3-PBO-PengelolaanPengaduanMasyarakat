@@ -491,91 +491,56 @@ Selain itu, terdapat method abstract:
 
 <img width="431" height="54" alt="image" src="https://github.com/user-attachments/assets/dcd162d2-a067-46a0-9ebd-2d6022d06643" />
 
-*Gambar 14: Penerapan Method Abstract pada super class `Pengaduan` dengan `getTingkatUrgensi` yang akan diturunkan ke subclass*
+*Gambar 15: Penerapan Method Abstract pada super class `Pengaduan` dengan `getTingkatUrgensi` yang akan diturunkan ke subclass*
 
 Method tersebut tidak memiliki implementasi di dalam superclass. Setiap subclass wajib memberikan implementasi sesuai dengan tingkat urgensinya.
 
 Pada `PengaduanBiasa`:
 
-```java
-@Override
-public String getTingkatUrgensi() {
-    return "BIASA";
-}
-```
+<img width="407" height="72" alt="image" src="https://github.com/user-attachments/assets/36d9a266-73a9-44b4-90e0-efcbbf2cb980" />
+
+*Gambar 16: Override pada class PengaduanBiasa*
 
 Sedangkan pada `PengaduanDarurat`:
 
-```java
-@Override
-public String getTingkatUrgensi() {
-    return "DARURAT";
-}
-```
+<img width="433" height="63" alt="image" src="https://github.com/user-attachments/assets/5f2cd635-d097-46ff-950c-2dc860430123" />                        
+
+*Gambar 16: Override pada class PengaduanDarurat*
 
 Dengan abstraction, class `Pengaduan` hanya menentukan bahwa setiap jenis pengaduan harus memiliki informasi tingkat urgensi, sedangkan detail nilai urgensinya ditentukan oleh masing-masing subclass.
 
 ---
 
 
-## 8 Penerapan Nilai Tambah dengan Interface `PenangananKhusus`
+## 8. Penerapan Nilai Tambah dengan Interface `PenangananKhusus`
 
 Nilai tambah lainnya adalah penggunaan **interface `PenangananKhusus`** untuk memberikan kontrak khusus pada pengaduan yang membutuhkan penanganan darurat.
 
 Interface terdapat pada:
 
-```java
-public interface PenangananKhusus {
+<img width="401" height="118" alt="image" src="https://github.com/user-attachments/assets/0f3027cf-2008-4cd6-badd-fb4e12c240a2" />
 
-    int getTargetWaktuResponJam();
-
-    void kirimNotifikasiDarurat();
-}
-```
+*Gambar 17: Penerapan Interface pada class `PenangananKhusus` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*
 
 Interface tersebut kemudian diimplementasikan oleh class `PengaduanDarurat`:
 
-```java
-public class PengaduanDarurat
-        extends Pengaduan
-        implements PenangananKhusus
-```
+<img width="479" height="26" alt="image" src="https://github.com/user-attachments/assets/19086ad7-8707-4421-b180-683e276dceaa" />                
 
-`PengaduanDarurat` wajib mengimplementasikan method yang terdapat pada interface, yaitu:
+*Gambar 17: Penerapan Interface pada class `PenangananKhusus` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*                
 
-```java
-@Override
-public int getTargetWaktuResponJam() {
-    return batasResponJam;
-}
-```
+`PengaduanDarurat` wajib mengimplementasikan method yang terdapat pada interface, yaitu:            
 
-dan:
+<img width="564" height="172" alt="image" src="https://github.com/user-attachments/assets/dd293fcf-4e66-4d12-8a71-04b30234c169" />
 
-```java
-@Override
-public void kirimNotifikasiDarurat() {
-    System.out.println(
-        "\n[NOTIFIKASI URGENT] Mengirim pesan darurat ke: "
-        + kontakDarurat
-    );
-    System.out.println(
-        "Target respons awal petugas: "
-        + getTargetWaktuResponJam() + " jam"
-    );
-}
-```
+*Gambar 18: Penerapan Interface pada class `PengaduanDarurat` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*                
 
 Interface digunakan karena tidak semua pengaduan membutuhkan penanganan khusus. Pada sistem ini, `PengaduanDarurat` memiliki kebutuhan tambahan berupa kontak darurat, target respons awal, dan notifikasi urgent.
 
 Saat pengaduan darurat berhasil dibuat, sistem memeriksa apakah object tersebut menerapkan interface `PenangananKhusus` menggunakan `instanceof`.
 
-```java
-if (pengaduanBaru instanceof PenangananKhusus) {
-    ((PenangananKhusus) pengaduanBaru)
-            .kirimNotifikasiDarurat();
-}
-```
+<img width="431" height="117" alt="image" src="https://github.com/user-attachments/assets/edfc465e-ee5e-4753-ad5c-c1f3995ebcd0" />                    
+
+*Gambar 18: Penerapan Interface pada class `PengelolaDataPengaduan` di dalam method prosesTambahPengaduan().*        
 
 Dengan penerapan tersebut, sistem dapat memberikan perlakuan khusus kepada pengaduan darurat tanpa membuat seluruh jenis pengaduan memiliki fitur notifikasi darurat.
 
