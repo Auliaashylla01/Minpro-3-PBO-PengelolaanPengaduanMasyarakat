@@ -24,7 +24,6 @@ Tujuan program adalah:
 * Mencari data pengaduan berdasarkan beberapa kriteria.
 * Mengubah status pengaduan berdasarkan tahapan penanganan.
 * Menghapus data pengaduan berdasarkan ID.
-* Menerapkan konsep OOP seperti encapsulation, inheritance, abstraction, polymorphism, dan interface.
 
 ---
 
