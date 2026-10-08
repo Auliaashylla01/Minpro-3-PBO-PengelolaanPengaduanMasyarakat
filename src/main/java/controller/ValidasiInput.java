@@ -2,17 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main;
+package controller;
 import java.util.Scanner;
 /**
- *
+ * Class ValidasiInput digunakan untuk method 
+ * untuk memvalidasi input user agar mencegah error program.
  * @author ASUS
  */
-//Class ValidasiInput digunakan untuk method untuk memvalidasi input user agar mencegah error program.
 public class ValidasiInput {
     // Jumlah hari pada tiap bulan untuk validasi tanggal
     private static final int[] jumlah_hari_perbulan =
             {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
      //Memastikan input teks dari user tidak kosong/spasi saja.
     public static String inputTidakKosong(Scanner scanner, String pesan) {
 
@@ -30,26 +31,65 @@ public class ValidasiInput {
             System.out.println("[Error] Input tidak boleh kosong! Silakan isi data dengan benar.");
         }
     }
-    //Input Untuk pilihan menu Sistem
-    public static int inputMenu(Scanner scanner) {
-
+    
+    //Memastikan pilihan berupa angka dalam rentang min sampai max.
+    //Input dibaca dengan nextLine() lalu dicek kosong, sehingga menekan
+    //ENTER tanpa isi tetap ditolak dengan pesan error.
+    public static int inputPilihan(Scanner scanner, String pesan, int min, int max) {
         while (true) {
-            System.out.print("Pilih menu: ");
+            System.out.print(pesan);
+            String input = scanner.nextLine().trim();
 
-            //Cek apakah inputan user benar-benar berupa angka
-            if (scanner.hasNextInt()) {
-                int menu = scanner.nextInt();
-                scanner.nextLine();
-
-                if (menu >= 1 && menu <= 5) {
-                    return menu; //Kembali ke menu jika angka 1 - 5
-                } else {
-                    System.out.println("[Error] Pilihan menu hanya dari 1 sampai 5!");
-                }
-            } else {
-                System.out.println("[Error] Input harus berupa angka!");
-                scanner.nextLine();
+            if (input.isEmpty()) {
+                System.out.println("[Error] Pilihan tidak boleh kosong!");
+                continue;
             }
+
+            try {
+                int pilihan = Integer.parseInt(input);
+
+                if (pilihan >= min && pilihan <= max) {
+                    return pilihan;
+                }
+                System.out.println("[Error] Pilihan hanya dari " + min + " sampai " + max + "!");
+            } catch (NumberFormatException e) {
+                System.out.println("[Error] Input harus berupa angka!");
+            }
+        }
+    }
+
+    // Input pilihan menu utama (angka 1 sampai 6)
+    public static int inputMenu(Scanner scanner) {
+        return inputPilihan(scanner, "Pilih menu: ", 1, 5);
+    }
+    // Input jenis pengaduan dari pilihan angka 1 sampai 5
+    public static String inputJenisPengaduan(Scanner scanner) {
+        int pilihan = inputPilihan(scanner, "Pilih Jenis Pengaduan: ", 1, 5);
+
+        switch (pilihan) {
+            case 1:
+                return "Fasilitas Umum";
+            case 2:
+                return "Kebersihan";
+            case 3:
+                return "Keamanan";
+            case 4:
+                return "Jalan";
+            default:
+                return "Pelayanan";
+        }
+    }
+    // Input status pengaduan dari pilihan angka 1 sampai 3
+    public static String inputStatus(Scanner scanner) {
+        int pilihan = inputPilihan(scanner, "Pilih Status: ", 1, 3);
+
+        switch (pilihan) {
+            case 1:
+                return "Menunggu Konfirmasi Petugas";
+            case 2:
+                return "Sedang Diproses";
+            default:
+                return "Selesai Ditindaklanjuti";
         }
     }
         // Input Untuk konfirmasi Penghapusan 
@@ -67,10 +107,11 @@ public class ValidasiInput {
                 return false;
             }
 
-            System.out.println("[Error] Input hanya boleh berupa huruf 'y' (ya) atau 'n' (tidak)!");
+            System.out.print("[Error] Input hanya boleh berupa huruf 'y' (ya) atau 'n' (tidak)! ");
         }
     }
-        //Digunakan agar nama pelapor tidak kosong, dengan panjang minimal 3 karakter hanya boleh terdiri dari huruf dan spasi 
+        //Digunakan agar nama pelapor tidak kosong, dengan panjang minimal 
+        //3 karakter hanya boleh terdiri dari huruf dan spasi 
         public static String inputNamaPelapor (Scanner scanner, String pesan){
             while (true){
                 System.out.print(pesan);
@@ -188,7 +229,3 @@ public class ValidasiInput {
         }
         }
 }
-        
-            
-
-

@@ -61,6 +61,23 @@ public class PengaduanView {
         System.out.println("2. Darurat (target respons awal standar 24 jam)");
     }
     
+    //Menampilkan pilihan status pengaduan
+    public void tampilkanPilihanStatus() {
+        System.out.println("\nStatus Pengaduan:");
+        System.out.println("1. Menunggu Konfirmasi Petugas");
+        System.out.println("2. Sedang Diproses");
+        System.out.println("3. Selesai Ditindaklanjuti");
+    }
+
+    //Menampilkan pilihan cara melihat data pengaduan
+    public void tampilkanMenuLihat() {
+        System.out.println("1. Lihat semua pengaduan");
+        System.out.println("2. Lihat berdasarkan ID");
+        System.out.println("3. Lihat berdasarkan Status");
+        System.out.println("4. Lihat berdasarkan Jenis");
+        System.out.println("5. Lihat berdasarkan Jenis dan Status");
+    }
+    
     //Menampilkan pesan biasa yang ingin ditampilkan
     public void tampilkanPesan(String pesan) { 
         System.out.println(pesan);
@@ -80,6 +97,13 @@ public class PengaduanView {
     public void tampilkanInfo(String pesan) { 
         System.out.println("\n[Informasi] " + pesan);
     } 
+    
+    // Menampilkan detail satu pengaduan
+    public void tampilkanDetailPengaduan(Pengaduan p) {
+        // Polymorphism: method yang dijalankan menyesuaikan objek aslinya
+        System.out.println(p.getDetailPengaduan());
+        System.out.println("--------------------------------------------------");
+    }
     
     //Menampilkan seluruh data pengaduan yang ada dalam daftar.
     public void tampilkanDaftarPengaduan(ArrayList<Pengaduan> daftar) {
@@ -127,9 +151,8 @@ public class PengaduanView {
     }
      
      //Digunakan untuk menunggu pengguna menekan tombol ENTER sebelum kembali ke menu utama.
-     public void tekanEnterUntukLanjut(Scanner scanner) {
+     public void tampilkanPesanLanjut() {
         System.out.println("\nTekan [ENTER] untuk kembali ke menu...");
-        scanner.nextLine();
     }
 
      //Menampilkan pesan penutup saat pengguna memilih menu keluar dari aplikasi.

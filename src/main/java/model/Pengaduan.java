@@ -5,14 +5,11 @@
 package model;
 
 /**
- *
- * @author ASUS
+ * Class ini digunakan untuk menyimpan atribut umum dari pengaduan masyarakat.
+ * Class ini merupakan superclass dari pengaduanBiasa dan pengaduanDarurat.
+ * Penerapan abstract sebagai dasar model pengaduan
  */
-
-//Class ini digunakan untuk menyimpan atribut umum dari pengaduan masyarakat.
-//Class ini merupakan superclass dari pengaduanBiasa dan pengaduanDarurat.
-
-public class Pengaduan {
+public abstract class Pengaduan {
     //Data private yang hanya bisa diakses secara langsung dari dalam class ini
     private String idPengaduan;
     private String namaPelapor;
@@ -58,10 +55,10 @@ public class Pengaduan {
     public void setStatus(String status) {
         this.status = status;
     }
-    //Digunakan untuk penerapan tingkat urgensi, sebagai bentuk override setiap subclass
-    public String getTingkatUrgensi(){
-        return "-";
-    }
+    //Digunakan untuk penerapan tingkat urgensi, 
+    //sebagai bentuk penerapan abstract dan tingkat urgensi setiap subclass
+    public abstract String getTingkatUrgensi();
+            
     //Method yang digunakan untuk menampilkan informasi pengaduan atau method dasar di superclass
     public String getDetailPengaduan(){
         return "ID Pengaduan : " + idPengaduan + "\n"+
