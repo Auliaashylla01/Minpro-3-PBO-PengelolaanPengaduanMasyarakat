@@ -425,13 +425,13 @@ Penerapan inheritance terlihat pada deklarasi:
 
 <img width="380" height="41" alt="image" src="https://github.com/user-attachments/assets/c213bfa3-616b-4fd2-9800-95fa2d94c1f6" />                
 
-*Gambar 10: Penerapan inheritance pada subclass PengaduanBiasa*            
+*Gambar 11: Penerapan inheritance pada subclass PengaduanBiasa*            
 
 dan:
 
 <img width="470" height="52" alt="image" src="https://github.com/user-attachments/assets/413be313-43d1-40b8-849b-813449c8b29a" />                
 
-*Gambar 11: Penerapan inheritance pada subclass PengaduanDarurat*                        
+*Gambar 12: Penerapan inheritance pada subclass PengaduanDarurat*                        
 
 Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
 
@@ -439,7 +439,7 @@ Contoh:
 
 <img width="556" height="115" alt="image" src="https://github.com/user-attachments/assets/cbf53c77-af77-4ed7-bdb3-b739e0842dae" />
 
-*Gambar 12: Penggunaan `super()` pada constructor subclass untuk memanggil constructor superclass `Pengaduan`.*
+*Gambar 13: Penggunaan `super()` pada constructor subclass untuk memanggil constructor superclass `Pengaduan`.*
 
 Dengan inheritance, atribut dan perilaku umum tidak perlu ditulis kembali pada masing-masing subclass. Setiap subclass hanya menambahkan atribut dan perilaku yang sesuai dengan jenis pengaduannya.
 
@@ -457,7 +457,7 @@ Penerapannya terdapat pada class `PengelolaDataPengaduan`.
 
 <img width="437" height="143" alt="image" src="https://github.com/user-attachments/assets/21874cb3-cb75-4148-a7ff-f685ffdb049b" />
 
-*Gambar 12: Penerapan Overloading pada class `PengelolaDataPengaduan`*
+*Gambar 14: Penerapan Overloading pada class `PengelolaDataPengaduan`*
 
 Method tersebut digunakan untuk mencari satu pengaduan berdasarkan ID dan menghasilkan satu object `Pengaduan`.
 
@@ -465,7 +465,7 @@ Method tersebut digunakan untuk mencari satu pengaduan berdasarkan ID dan mengha
 
 <img width="496" height="180" alt="image" src="https://github.com/user-attachments/assets/085e5645-76f4-4f3a-8756-8a1599d02e15" />
 
-*Gambar 13: Penerapan Overloading pada class `PengelolaDataPengaduan` dengan parameter yang berbeda*
+*Gambar 15: Penerapan Overloading pada class `PengelolaDataPengaduan` dengan parameter yang berbeda*
 
 Method tersebut memiliki nama yang sama, tetapi parameter yang digunakan berbeda. Method ini digunakan untuk mencari beberapa pengaduan berdasarkan kombinasi jenis dan status.
 
@@ -483,7 +483,7 @@ Penerapannya terlihat pada kode:
 
 <img width="202" height="17" alt="image" src="https://github.com/user-attachments/assets/8224a86d-d7b8-4b0c-b011-13cfef8005ce" />
 
-*Gambar 14: Penerapan Abstraction pada super class`Pengaduan`*
+*Gambar 16: Penerapan Abstraction pada super class`Pengaduan`*
 
 Class `Pengaduan` tidak dibuat sebagai object secara langsung karena hanya berisi struktur dan perilaku umum yang akan digunakan oleh subclass.
 
@@ -491,7 +491,7 @@ Selain itu, terdapat method abstract:
 
 <img width="431" height="54" alt="image" src="https://github.com/user-attachments/assets/dcd162d2-a067-46a0-9ebd-2d6022d06643" />
 
-*Gambar 15: Penerapan Method Abstract pada super class `Pengaduan` dengan `getTingkatUrgensi` yang akan diturunkan ke subclass*
+*Gambar 17: Penerapan Method Abstract pada super class `Pengaduan` dengan `getTingkatUrgensi` yang akan diturunkan ke subclass*
 
 Method tersebut tidak memiliki implementasi di dalam superclass. Setiap subclass wajib memberikan implementasi sesuai dengan tingkat urgensinya.
 
@@ -499,13 +499,13 @@ Pada `PengaduanBiasa`:
 
 <img width="407" height="72" alt="image" src="https://github.com/user-attachments/assets/36d9a266-73a9-44b4-90e0-efcbbf2cb980" />
 
-*Gambar 16: Override pada class PengaduanBiasa*
+*Gambar 18: Override pada class PengaduanBiasa*
 
 Sedangkan pada `PengaduanDarurat`:
 
 <img width="433" height="63" alt="image" src="https://github.com/user-attachments/assets/5f2cd635-d097-46ff-950c-2dc860430123" />                        
 
-*Gambar 16: Override pada class PengaduanDarurat*
+*Gambar 19: Override pada class PengaduanDarurat*
 
 Dengan abstraction, class `Pengaduan` hanya menentukan bahwa setiap jenis pengaduan harus memiliki informasi tingkat urgensi, sedangkan detail nilai urgensinya ditentukan oleh masing-masing subclass.
 
@@ -520,19 +520,19 @@ Interface terdapat pada:
 
 <img width="401" height="118" alt="image" src="https://github.com/user-attachments/assets/0f3027cf-2008-4cd6-badd-fb4e12c240a2" />
 
-*Gambar 17: Penerapan Interface pada class `PenangananKhusus` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*
+*Gambar 20: Penerapan Interface pada class `PenangananKhusus` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*
 
 Interface tersebut kemudian diimplementasikan oleh class `PengaduanDarurat`:
 
 <img width="479" height="26" alt="image" src="https://github.com/user-attachments/assets/19086ad7-8707-4421-b180-683e276dceaa" />                
 
-*Gambar 17: Penerapan Interface pada class `PenangananKhusus` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*                
+*Gambar 21: Penerapan Interface pada class `PenangananKhusus` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*                
 
 `PengaduanDarurat` wajib mengimplementasikan method yang terdapat pada interface, yaitu:            
 
 <img width="564" height="172" alt="image" src="https://github.com/user-attachments/assets/dd293fcf-4e66-4d12-8a71-04b30234c169" />
 
-*Gambar 18: Penerapan Interface pada class `PengaduanDarurat` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*                
+*Gambar 22: Penerapan Interface pada class `PengaduanDarurat` dengan dua method `getTargetWaktuResponJam` dan `kirimNotifikasiDarurat`.*                
 
 Interface digunakan karena tidak semua pengaduan membutuhkan penanganan khusus. Pada sistem ini, `PengaduanDarurat` memiliki kebutuhan tambahan berupa kontak darurat, target respons awal, dan notifikasi urgent.
 
@@ -540,7 +540,7 @@ Saat pengaduan darurat berhasil dibuat, sistem memeriksa apakah object tersebut 
 
 <img width="431" height="117" alt="image" src="https://github.com/user-attachments/assets/edfc465e-ee5e-4753-ad5c-c1f3995ebcd0" />                    
 
-*Gambar 18: Penerapan Interface pada class `PengelolaDataPengaduan` di dalam method prosesTambahPengaduan().*        
+*Gambar 23: Penerapan Interface pada class `PengelolaDataPengaduan` di dalam method prosesTambahPengaduan().*        
 
 Dengan penerapan tersebut, sistem dapat memberikan perlakuan khusus kepada pengaduan darurat tanpa membuat seluruh jenis pengaduan memiliki fitur notifikasi darurat.
 
