@@ -1,4 +1,4 @@
-# Sistem Pengelolaan Pengaduan Masyarakat
+<img width="470" height="52" alt="image" src="https://github.com/user-attachments/assets/51927dcf-3472-4baa-aec9-f40b994c8429" /># Sistem Pengelolaan Pengaduan Masyarakat
 
 **Oleh Aulia Ashylla Ananda Putri Hariawan (2509116076)**
 
@@ -388,36 +388,16 @@ Ketika pengguna memilih menu `5`, program menampilkan pesan penutup dan mengakhi
 
 Pada class `Pengaduan`, atribut utama menggunakan `private`:
 
-```java
-private String idPengaduan;
-private String namaPelapor;
-private String jenisPengaduan;
-private String isiPengaduan;
-private String tanggalPengaduan;
-private String status;
-```
+<img width="455" height="98" alt="image" src="https://github.com/user-attachments/assets/cb3e1b40-8315-42c0-905c-2c54197b9f0f" />
+
+*Gambar 9: Penerapan encapsulation pada Class Pengaduan dengan access modifier*
 
 Atribut tersebut tidak dapat diakses secara langsung dari class lain. Akses terhadap data dilakukan melalui method yang telah disediakan.
 
-Contoh penerapannya:
-
-```java
-public String getNamaPelapor() {
-    return namaPelapor;
-}
-
-public String getStatus() {
-    return status;
-}
-
-public void setStatus(String status) {
-    this.status = status;
-}
-```
 
 <img width="526" height="143" alt="image" src="https://github.com/user-attachments/assets/c8f08e32-85c0-4df3-a6bc-b0eb24199b00" />
 
-*Gambar 8: Penerapan encapsulation melalui method `getter` dan `setter` pada class `Pengaduan`.*
+*Gambar 10: Penerapan encapsulation melalui method `getter` dan `setter` pada class `Pengaduan`.*
 
 Atribut `idPengaduan` tidak memiliki `setter`. Hal tersebut dilakukan karena ID dibuat secara otomatis oleh sistem dan digunakan sebagai identitas pengaduan sehingga tidak diubah melalui setter.
 
@@ -443,32 +423,23 @@ Dua subclass mewarisi class tersebut:
 
 Penerapan inheritance terlihat pada deklarasi:
 
-```java
-public class PengaduanBiasa extends Pengaduan
-```
+<img width="380" height="41" alt="image" src="https://github.com/user-attachments/assets/c213bfa3-616b-4fd2-9800-95fa2d94c1f6" />                
+
+*Gambar 10: Penerapan inheritance pada subclass PengaduanBiasa*            
 
 dan:
 
-```java
-public class PengaduanDarurat extends Pengaduan
-```
+<img width="470" height="52" alt="image" src="https://github.com/user-attachments/assets/413be313-43d1-40b8-849b-813449c8b29a" />                
 
-<img width="420" height="50" alt="image" src="https://github.com/user-attachments/assets/7867d53a-aab1-4c7e-b240-38ac9667ed98" />
-
-*Gambar 9: Penerapan inheritance pada class `PengaduanBiasa` melalui keyword `extends`.*
+*Gambar 11: Penerapan inheritance pada subclass PengaduanDarurat*                        
 
 Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
 
 Contoh:
 
-```java
-super(idPengaduan, namaPelapor, jenisPengaduan,
-      isiPengaduan, tanggalPengaduan);
-```
-
 <img width="556" height="115" alt="image" src="https://github.com/user-attachments/assets/cbf53c77-af77-4ed7-bdb3-b739e0842dae" />
 
-*Gambar 10: Penggunaan `super()` pada constructor subclass untuk memanggil constructor superclass `Pengaduan`.*
+*Gambar 12: Penggunaan `super()` pada constructor subclass untuk memanggil constructor superclass `Pengaduan`.*
 
 Dengan inheritance, atribut dan perilaku umum tidak perlu ditulis kembali pada masing-masing subclass. Setiap subclass hanya menambahkan atribut dan perilaku yang sesuai dengan jenis pengaduannya.
 
@@ -484,18 +455,17 @@ Penerapannya terdapat pada class `PengelolaDataPengaduan`.
 
 ### Overloading 1 — Mencari berdasarkan ID
 
-```java
-public Pengaduan cariPengaduan(String idPengaduan)
-```
+<img width="437" height="143" alt="image" src="https://github.com/user-attachments/assets/21874cb3-cb75-4148-a7ff-f685ffdb049b" />
+
+*Gambar 12: Penerapan Overloading pada class `PengelolaDataPengaduan`*
 
 Method tersebut digunakan untuk mencari satu pengaduan berdasarkan ID dan menghasilkan satu object `Pengaduan`.
 
 ### Overloading 2 — Mencari berdasarkan jenis dan status
 
-```java
-public ArrayList<Pengaduan> cariPengaduan(
-        String jenisPengaduan, String status)
-```
+<img width="496" height="180" alt="image" src="https://github.com/user-attachments/assets/085e5645-76f4-4f3a-8756-8a1599d02e15" />
+
+*Gambar 13: Penerapan Overloading pada class `PengelolaDataPengaduan` dengan parameter yang berbeda*
 
 Method tersebut memiliki nama yang sama, tetapi parameter yang digunakan berbeda. Method ini digunakan untuk mencari beberapa pengaduan berdasarkan kombinasi jenis dan status.
 
@@ -511,17 +481,17 @@ Penerapan overloading digunakan pada fitur **Lihat Pengaduan**, khususnya ketika
 
 Penerapannya terlihat pada kode:
 
-```java
-public abstract class Pengaduan {
-```
+<img width="202" height="17" alt="image" src="https://github.com/user-attachments/assets/8224a86d-d7b8-4b0c-b011-13cfef8005ce" />
+
+*Gambar 14: Penerapan Abstraction pada super class`Pengaduan`*
 
 Class `Pengaduan` tidak dibuat sebagai object secara langsung karena hanya berisi struktur dan perilaku umum yang akan digunakan oleh subclass.
 
 Selain itu, terdapat method abstract:
 
-```java
-public abstract String getTingkatUrgensi();
-```
+<img width="431" height="54" alt="image" src="https://github.com/user-attachments/assets/dcd162d2-a067-46a0-9ebd-2d6022d06643" />
+
+*Gambar 14: Penerapan Method Abstract pada super class `Pengaduan` dengan `getTingkatUrgensi` yang akan diturunkan ke subclass*
 
 Method tersebut tidak memiliki implementasi di dalam superclass. Setiap subclass wajib memberikan implementasi sesuai dengan tingkat urgensinya.
 
@@ -547,45 +517,8 @@ Dengan abstraction, class `Pengaduan` hanya menentukan bahwa setiap jenis pengad
 
 ---
 
-# 8. Penerapan Nilai Tambah
 
-Nilai tambah yang diterapkan dalam program adalah **struktur MVC dan interface**.
-
-## 8.1 Struktur MVC
-
-Program menggunakan konsep **Model-View-Controller (MVC)** untuk memisahkan tanggung jawab setiap bagian program.
-
-* **Model** berisi representasi data dan perilaku objek pengaduan.
-* **View** menangani tampilan yang ditampilkan kepada pengguna pada terminal.
-* **Controller** menangani pengelolaan data dan proses CRUD.
-* **Main** menjadi titik awal program dan menghubungkan proses awal dengan controller.
-* **ValidasiInput** dipisahkan dalam package `controller` untuk menangani validasi input pengguna.
-
-Pembagian tersebut dapat dilihat pada struktur package:
-
-```text
-Model
- ├── Pengaduan
- ├── PengaduanBiasa
- ├── PengaduanDarurat
- └── PenangananKhusus
-
-View
- └── PengaduanView
-
-Controller
- ├── PengelolaDataPengaduan
- └── ValidasiInput
-
-Main
- └── PengelolaanPengaduanMasyarakt
-```
-
-Pemisahan ini digunakan untuk membedakan pengelolaan data, tampilan, validasi input, dan proses utama sistem sehingga struktur program lebih terorganisir.
-
----
-
-## 8.2 Interface `PenangananKhusus`
+## 8 Penerapan Nilai Tambah dengan Interface `PenangananKhusus`
 
 Nilai tambah lainnya adalah penggunaan **interface `PenangananKhusus`** untuk memberikan kontrak khusus pada pengaduan yang membutuhkan penanganan darurat.
 
@@ -648,16 +581,3 @@ Dengan penerapan tersebut, sistem dapat memberikan perlakuan khusus kepada penga
 
 ---
 
-# 9. Ringkasan Konsep OOP yang Diterapkan
-
-| Konsep            | Penerapan dalam Program                                                                                |
-| ----------------- | ------------------------------------------------------------------------------------------------------ |
-| **Encapsulation** | Atribut pada class menggunakan `private` dan diakses melalui getter/setter.                            |
-| **Inheritance**   | `PengaduanBiasa` dan `PengaduanDarurat` mewarisi `Pengaduan` menggunakan `extends`.                    |
-| **Polymorphism**  | Method overloading pada `cariPengaduan()` dengan parameter yang berbeda.                               |
-| **Abstraction**   | `Pengaduan` dibuat sebagai `abstract class` dan memiliki abstract method `getTingkatUrgensi()`.        |
-| **Interface**     | `PenangananKhusus` diterapkan oleh `PengaduanDarurat` untuk kebutuhan penanganan khusus.               |
-| **MVC**           | Program memisahkan bagian Model, View, Controller, dan Main.                                           |
-| **Validation**    | `ValidasiInput` digunakan untuk memvalidasi input menu, nama, tanggal, ID, status, dan kontak darurat. |
-
-Program dengan demikian tidak hanya digunakan untuk menjalankan proses CRUD pengaduan, tetapi juga menerapkan beberapa konsep Pemrograman Berorientasi Objek melalui struktur class, pewarisan, abstraction, overloading, interface, serta pemisahan tanggung jawab menggunakan MVC.
