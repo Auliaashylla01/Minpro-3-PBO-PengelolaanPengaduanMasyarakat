@@ -1,4 +1,4 @@
-<img width="470" height="52" alt="image" src="https://github.com/user-attachments/assets/51927dcf-3472-4baa-aec9-f40b994c8429" /># Sistem Pengelolaan Pengaduan Masyarakat
+# Sistem Pengelolaan Pengaduan Masyarakat
 
 **Oleh Aulia Ashylla Ananda Putri Hariawan (2509116076)**
 
