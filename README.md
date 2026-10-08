@@ -214,7 +214,8 @@ Pada pengaduan darurat, pengguna juga diminta memasukkan kontak darurat. Setelah
 
 ### Bukti output proses tambah pengaduan darurat
 
-<img width="374" height="306" alt="image" src="https://github.com/user-attachments/assets/2dbff5be-98f0-43bc-88fe-7545cee8f4b1" />
+<img width="350" height="380" alt="image" src="https://github.com/user-attachments/assets/f90ce3f7-ff67-4651-9faf-64b95233e9c9" />
+
 
 *Gambar 3: Proses penambahan pengaduan darurat yang menghasilkan object `PengaduanDarurat`, meminta input kontak darurat pelapor, serta menjalankan notifikasi penanganan khusus.*
 
